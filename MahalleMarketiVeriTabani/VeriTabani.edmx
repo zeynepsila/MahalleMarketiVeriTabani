@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MahalleMarketiVeriTabaniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="müsteriler">
+          <Key>
+            <PropertyRef Name="MusteriKodu" />
+          </Key>
+          <Property Name="MusteriAdi" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MusteriKodu" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SatinAldigiUrunFiyat" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="OdedigiMiktar" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SatinAldigiTarih" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Borc" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MusteriAdresi" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="OdemeYaptigiTarih" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SatinAldigiUrunKodu" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MahalleMarketiVeriTabani.dbo.saticilar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="saticilar">
+          <Key>
+            <PropertyRef Name="SaticiKullaniciAdi" />
+            <PropertyRef Name="SaticiSifre" />
+          </Key>
+          <Property Name="SaticiKullaniciAdi" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SaticiSifre" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ürünler">
+          <Key>
+            <PropertyRef Name="UrunKodu" />
+          </Key>
+          <Property Name="TedarikciFirmaAdi" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="TedarikciFirmaKodu" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="UrunKodu" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="UlkeKodu" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IrsaliyeNumarasi" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="GelisFiyati" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Miktari" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="BarkodNumarasi" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="GelisTarihi" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MahalleMarketiVeriTabaniModelStoreContainer">
+          <EntitySet Name="müsteriler" EntityType="Self.müsteriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ürünler" EntityType="Self.ürünler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="saticilar" EntityType="Self.saticilar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [saticilar].[SaticiKullaniciAdi] AS [SaticiKullaniciAdi], 
+    [saticilar].[SaticiSifre] AS [SaticiSifre]
+    FROM [dbo].[saticilar] AS [saticilar]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MahalleMarketiVeriTabaniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="müsteriler">
+          <Key>
+            <PropertyRef Name="MusteriKodu" />
+          </Key>
+          <Property Name="MusteriAdi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MusteriKodu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SatinAldigiUrunFiyat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="OdedigiMiktar" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SatinAldigiTarih" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Borc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MusteriAdresi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="OdemeYaptigiTarih" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SatinAldigiUrunKodu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ürünler">
+          <Key>
+            <PropertyRef Name="UrunKodu" />
+          </Key>
+          <Property Name="TedarikciFirmaAdi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TedarikciFirmaKodu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UrunKodu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UlkeKodu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IrsaliyeNumarasi" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="GelisFiyati" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Miktari" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="BarkodNumarasi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="GelisTarihi" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="saticilar">
+          <Key>
+            <PropertyRef Name="SaticiKullaniciAdi" />
+            <PropertyRef Name="SaticiSifre" />
+          </Key>
+          <Property Name="SaticiKullaniciAdi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SaticiSifre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MahalleMarketiVeriTabaniEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="müsteriler" EntityType="Self.müsteriler" />
+          <EntitySet Name="ürünler" EntityType="Self.ürünler" />
+          <EntitySet Name="saticilar" EntityType="Self.saticilar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MahalleMarketiVeriTabaniModelStoreContainer" CdmEntityContainer="MahalleMarketiVeriTabaniEntities2">
+          <EntitySetMapping Name="müsteriler">
+            <EntityTypeMapping TypeName="MahalleMarketiVeriTabaniModel.müsteriler">
+              <MappingFragment StoreEntitySet="müsteriler">
+                <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+                <ScalarProperty Name="MusteriKodu" ColumnName="MusteriKodu" />
+                <ScalarProperty Name="SatinAldigiUrunFiyat" ColumnName="SatinAldigiUrunFiyat" />
+                <ScalarProperty Name="OdedigiMiktar" ColumnName="OdedigiMiktar" />
+                <ScalarProperty Name="SatinAldigiTarih" ColumnName="SatinAldigiTarih" />
+                <ScalarProperty Name="Borc" ColumnName="Borc" />
+                <ScalarProperty Name="MusteriAdresi" ColumnName="MusteriAdresi" />
+                <ScalarProperty Name="OdemeYaptigiTarih" ColumnName="OdemeYaptigiTarih" />
+                <ScalarProperty Name="SatinAldigiUrunKodu" ColumnName="SatinAldigiUrunKodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ürünler">
+            <EntityTypeMapping TypeName="MahalleMarketiVeriTabaniModel.ürünler">
+              <MappingFragment StoreEntitySet="ürünler">
+                <ScalarProperty Name="TedarikciFirmaAdi" ColumnName="TedarikciFirmaAdi" />
+                <ScalarProperty Name="TedarikciFirmaKodu" ColumnName="TedarikciFirmaKodu" />
+                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+                <ScalarProperty Name="UlkeKodu" ColumnName="UlkeKodu" />
+                <ScalarProperty Name="IrsaliyeNumarasi" ColumnName="IrsaliyeNumarasi" />
+                <ScalarProperty Name="GelisFiyati" ColumnName="GelisFiyati" />
+                <ScalarProperty Name="Miktari" ColumnName="Miktari" />
+                <ScalarProperty Name="BarkodNumarasi" ColumnName="BarkodNumarasi" />
+                <ScalarProperty Name="GelisTarihi" ColumnName="GelisTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saticilar">
+            <EntityTypeMapping TypeName="MahalleMarketiVeriTabaniModel.saticilar">
+              <MappingFragment StoreEntitySet="saticilar">
+                <ScalarProperty Name="SaticiKullaniciAdi" ColumnName="SaticiKullaniciAdi" />
+                <ScalarProperty Name="SaticiSifre" ColumnName="SaticiSifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

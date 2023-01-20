@@ -1,0 +1,12 @@
+TedarikciFirmaAdi: Pınar
+TedarikciFirmaKodu: 4598
+UrunKodu: 85324
+UlkeKodu: 789
+IrsaliyeNumarasi: 123698574
+GelisFiyati: 25
+Miktari: 1500
+BarkodNumarasi: 7894598853245
+GelisTarihi: 01.02.2023
+Kar: 25
+Zarar: -25
+satisFiyati: 50

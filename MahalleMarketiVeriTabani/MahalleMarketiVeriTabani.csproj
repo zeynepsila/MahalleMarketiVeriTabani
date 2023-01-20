@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B060350-B2C4-4AF1-8F0A-C81DF1903429}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MahalleMarketiVeriTabani</RootNamespace>
+    <AssemblyName>MahalleMarketiVeriTabani</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="müsteriler.cs">
+      <DependentUpon>VeriTabani.tt</DependentUpon>
+    </Compile>
+    <Compile Include="müşteriler_sayfasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="müşteriler_sayfasi.Designer.cs">
+      <DependentUpon>müşteriler_sayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="saticilar.cs">
+      <DependentUpon>VeriTabani.tt</DependentUpon>
+    </Compile>
+    <Compile Include="saticilar_sayfasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="saticilar_sayfasi.Designer.cs">
+      <DependentUpon>saticilar_sayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="VeriTabani.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VeriTabani.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VeriTabani.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VeriTabani.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VeriTabani.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VeriTabani.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebCustomControl1.cs" />
+    <Compile Include="ürünler.cs">
+      <DependentUpon>VeriTabani.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ürünler_sayfasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ürünler_sayfasi.Designer.cs">
+      <DependentUpon>ürünler_sayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="giris_sayfasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="giris_sayfasi.Designer.cs">
+      <DependentUpon>giris_sayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="giris_sayfasi.resx">
+      <DependentUpon>giris_sayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="müşteriler_sayfasi.resx">
+      <DependentUpon>müşteriler_sayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="saticilar_sayfasi.resx">
+      <DependentUpon>saticilar_sayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ürünler_sayfasi.resx">
+      <DependentUpon>ürünler_sayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="VeriTabani.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VeriTabani.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="VeriTabani.edmx.diagram">
+      <DependentUpon>VeriTabani.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fotograflar\crystal-clear-action-exit-12.png" />
+    <Content Include="fotograflar\istockphoto-1205419959-612x612.jpg" />
+    <Content Include="fotograflar\png-clipart-industry-logistics-transport-warehouse-computer-icons-encapsulated-postscript-logo-warehouse.png" />
+    <Content Include="fotograflar\png-clipart-shopping-cart-woman-designer-shopping-woman-business-woman-people.png" />
+    <Content Include="fotograflar\png-transparent-computer-icons-thelkin-ag-warehouse-logo-microsoft-office-black.png" />
+    <Content Include="fotograflar\png-transparent-exit-sign-emergency-exit-computer-icons-graphy-others-text-photography-trademark.png" />
+    <Content Include="fotograflar\png-transparent-logo-brand-house-line-warehouse-logistics-angle-logo-property.png" />
+    <Content Include="fotograflar\png-transparent-shopping-cart-online-shopping-empty-cart-angle-logo-shopping-centre.png" />
+    <Content Include="fotograflar\png-transparent-vendor-sales-service-marketing-marketing-retail-service-logo.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VeriTabani.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VeriTabani.edmx</DependentUpon>
+      <LastGenOutput>VeriTabani.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="VeriTabani.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VeriTabani.edmx</DependentUpon>
+      <LastGenOutput>VeriTabani.cs</LastGenOutput>
+    </Content>
+    <Content Include="veritabani.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
